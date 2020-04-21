@@ -33,21 +33,21 @@ composer install
 Uncomment these lines and create the according database
 
 ```
-#DB_CONNECTION=mysql
-#DB_HOST=127.0.0.1
-#DB_PORT=3306
-#DB_DATABASE=njuskalo
-#DB_USERNAME=njuskalo
-#DB_PASSWORD=njuskalo
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=njuskalo
+DB_USERNAME=njuskalo
+DB_PASSWORD=njuskalo
 ```
 
 #### SQLite database
 
-Uncomment these lines and change `$USER` with your local user
+Uncomment these lines and change `{USER}` with your local user
 
 ```
-#DB_CONNECTION=sqlite
-#DB_DATABASE=/home/{USER}/njuskalo-tracker.sqllite
+DB_CONNECTION=sqlite
+DB_DATABASE=/home/{USER}/njuskalo-tracker.sqllite
 ```
 
 Create the database file
@@ -56,17 +56,20 @@ Create the database file
 touch /home/$USER/njuskalo-tracker.sqllite
 ```
 
+## Local Development Server
+If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application,
+you may use the serve Artisan command. This command will start a development server at `http://localhost:8000`
+```
+php artisan serve
+```
+
 ## Running the tests
 
 Unit and feature test can be run by
 
 ```
-artisan test
+php artisan test
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
