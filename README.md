@@ -4,7 +4,7 @@ Track price changes of your favourite ads from njuskalo.hr
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -16,28 +16,52 @@ composer
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Copy `.env.example` to `.env`
 
 ```
-Give the example
+cp .env.example .env
 ```
 
-And repeat
+Install project dependencies via `composer`
 
 ```
-until finished
+composer install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+#### MySQL database
+
+Uncomment these lines and create the according database
+
+```
+#DB_CONNECTION=mysql
+#DB_HOST=127.0.0.1
+#DB_PORT=3306
+#DB_DATABASE=njuskalo
+#DB_USERNAME=njuskalo
+#DB_PASSWORD=njuskalo
+```
+
+#### SQLite database
+
+Uncomment these lines and change `$USER` with your local user
+
+```
+#DB_CONNECTION=sqlite
+#DB_DATABASE=/home/{USER}/njuskalo-tracker.sqllite
+```
+
+Create the database file
+
+```
+touch /home/$USER/njuskalo-tracker.sqllite
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Unit and feature test can be run by
 
 ```
-Give an example
+artisan test
 ```
 
 ## Deployment
@@ -52,7 +76,3 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **Goran Galinec** - [gorangalinec](https://github.com/gorangalinec)
-
-## Acknowledgments
-
-* Njuškalo for not having this feature
